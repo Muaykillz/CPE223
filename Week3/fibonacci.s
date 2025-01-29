@@ -2,7 +2,7 @@ nthFibonacci:
         push    {r4, r7, lr}    @ Save registers on stack (r4 for temp storage, r7 frame pointer, lr return address)
         sub     sp, sp, #12     @ Allocate 12 bytes on stack
         add     r7, sp, #0      @ Set up frame pointer
-        str     r0, [r7, #4]    @ Store input parameter n on stack
+        str     r0, [r7, #4]    @ Store input parameter n (from r0) on stack (at [r7+4])
         
         @ Check if n <= 1 (base case)
         ldr     r3, [r7, #4]    @ Load n into r3
